@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contoh Halaman Web</title>
+    <script>
+        // Redirect to Instagram app
+        function redirectToInstagram() {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            if (/android/i.test(userAgent)) {
+                window.location.href = 'intent://instagram.com#Intent;package=com.instagram.android;scheme=https;end';
+            } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                window.location.href = 'instagram://';
+            } else {
+                // For other devices, open Instagram web URL
+                window.location.href = 'https://www.instagram.com/';
+            }
+        }
+
+        // Redirect to Instagram when the page loads
+        window.onload = function () {
+            redirectToInstagram();
+        };
+    </script>
+</head>
+<body>
+    <!-- No graphical interface content -->
+    <p>Please Wait</p>
+</body>
+</html>
