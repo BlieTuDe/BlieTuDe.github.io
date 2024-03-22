@@ -10,7 +10,7 @@
             var userAgent = navigator.userAgent || navigator.vendor || window.opera;
             if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
                 // Jika perangkat adalah iPhone, buka tautan di browser eksternal
-                window.open(url, '_system');
+                window.open('https://www.instagram.com/', '_system');
             } else if (/android/i.test(userAgent)) {
                 // Jika perangkat adalah Android, buka tautan di Chrome
                 var intentURL = 'intent://#Intent;package=com.android.chrome;scheme=' + url + ';end';
