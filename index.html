@@ -5,18 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contoh Halaman Web</title>
     <script>
-        // Fungsi untuk membuka halaman melalui browser eksternal
+        // Fungsi untuk membuka tautan menggunakan browser eksternal
         function openInExternalBrowser(url) {
             var userAgent = navigator.userAgent || navigator.vendor || window.opera;
             if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-                // Jika perangkat adalah iPhone, buka link di Safari
-                window.location.href = 'https://chat.openai.com/';
+                // Jika perangkat adalah iPhone, buka tautan di browser eksternal
+                window.open(url, '_system');
             } else if (/android/i.test(userAgent)) {
-                // Jika perangkat adalah Android, buka link di Chrome
+                // Jika perangkat adalah Android, buka tautan di Chrome
                 var intentURL = 'intent://#Intent;package=com.android.chrome;scheme=' + url + ';end';
                 window.location.href = intentURL;
             } else {
-                // Untuk perangkat lain, buka link di browser default
+                // Untuk perangkat lain, buka tautan di browser default
                 window.open(url, '_blank');
             }
         }
